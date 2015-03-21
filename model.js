@@ -55,6 +55,7 @@
           success: function (data) {
             messagesList  = data;
             for(var i = 0; i < messagesList.length; i++){
+              if (typeof messagesList[i].message !== 'string') continue;
               messagesList[i].message = messagesList[i].message.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
               messagesList[i].time = formatTime(messagesList[i].time);

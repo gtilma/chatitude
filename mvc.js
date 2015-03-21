@@ -80,7 +80,7 @@
 
     setInterval(function(){
       App.pubsub.emit('refresh');
-    }, 5000);
+    }, 10000);
   };
 
   Messages.render = function(){
