@@ -5,44 +5,46 @@
   <script src="minivents.js"></script>
   <script src="model.js"></script>
   <script src="mvp.js"></script>
-  <!--<script src="mvc.js"></script>-->
+  <!-- // <script src="mvc.js"></script> -->
   <link rel="stylesheet" href="main.css" type="text/css">
 </head>
 <body>
-  <h1>Chatitude</h1>
-  <div id="parent">
-    <form id="signup">
-      <h3>Signup</h3>
-      <label for="su_username">Username: </label>
-      <input id="su_username" type="text">
-      <label for="su_password">Password: </label>
-      <input id="su_password" type="password">
-      <input class="button" id="su_submit" type="submit" value="Signup">
-    </form>
+  <div id="main">
+    <h1>Chatitude</h1>
+    <div id="parent">
+      <form id="signup">
+        <h3>Signup</h3>
+        <label for="su_username">Username: </label>
+        <input id="su_username" type="text">
+        <label for="su_password">Password: </label>
+        <input id="su_password" type="password">
+        <input class="button" id="su_submit" type="submit" value="Signup">
+      </form>
 
-    <form id="signin">
-      <h3>Signin</h3>
-      <label for="si_username">Username: </label>
-      <input id="si_username" type="text">
-      <label for="si_password">Password: </label>
-      <input id="si_password" type="password">
-      <input class="button" id="su_submit" type="submit" value="Signin">
-    </form>
+      <form id="signin">
+        <h3>Signin</h3>
+        <label for="si_username">Username: </label>
+        <input id="si_username" type="text">
+        <label for="si_password">Password: </label>
+        <input id="si_password" type="password">
+        <input class="button" id="su_submit" type="submit" value="Signin">
+      </form>
 
-    <form id="send">
-      <h3>Send Message</h3>
-      <input id="messageText" type="text">
-      <input class="button" id="submitBtn" type="submit" value="Send Message">
-    </form>
+      <form id="send">
+        <h3>Send Message</h3>
+        <input id="messageText" type="text">
+        <input class="button" id="submitBtn" type="submit" value="Send Message">
+      </form>
+    </div>
   </div>
 
-  <script>
-    (function () {
-      window.App = {}
-      App.pubsub = new Events();
-      Messages.mount();
-    })();
-  </script>
+    <script>
+      (function () {
+        window.App = {}
+        App.pubsub = new Events();
+        Messages.mount();
+      })();
+    </script>
 
-</body>
+  </body>
 </html>

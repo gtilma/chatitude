@@ -12,9 +12,11 @@ body {
   cursor:pointer;
   transition:all 0.2s ease-in-out;
 }
+
 .button:hover{
   opacity:0.8;
 }
+
 input[type=text], input[type=password] {
   font-family:inherit;
   padding:1em;
@@ -26,6 +28,16 @@ input[type=text], input[type=password] {
 label{
   display:block;
   margin:1em 0em 1em 0em;
+}
+
+#main {
+  width:400px;
+  margin:100px auto;
+}
+
+.msgTxt {
+  display: block;
+  margin: 1em 0 1em 2em;
 }
 
 .signedInAs {

@@ -5,7 +5,7 @@ window.Messages = [];
 Messages.Presenter = function(){
 
   App.pubsub.on('postmessage', function(messageObj){
-    $("#allMessages").append($('<div>').append(messageObj.time + ': ' + messageObj.user + ': ' + messageObj.message));
+    $("#allMessages").prepend($('<div>').append(messageObj.time + ': ' + messageObj.user + ': ' + '<span class="msgTxt">' + messageObj.message + '</span>'));
   });
 
   App.pubsub.on('refresh',function(){
@@ -27,12 +27,16 @@ Messages.Presenter = function(){
     $('#send, #signOut').show();
   });
 
+  App.pubsub.on('error', function(error){
+    alert(error);
+  });
+
   $('#signup').submit(function (e) {
     e.preventDefault();
     var user = $('#su_username').val();
     var pass = $('#su_password').val();
     if (!user || !pass) {
-      alert('You are missing something');
+      App.pubsub.emit('error','You are missing something');
     } else {
       ChatModel.signup(user, pass);
     }
@@ -43,7 +47,7 @@ Messages.Presenter = function(){
     var user = $('#si_username').val();
     var pass = $('#si_password').val();
     if (!user || !pass) {
-      alert('You are missing something');
+      App.pubsub.emit('error','You are missing something');
     } else {
       ChatModel.signin(user, pass);
     }
@@ -53,7 +57,7 @@ Messages.Presenter = function(){
     e.preventDefault();
     var msgTxt = $('#messageText').val();
     if (!msgTxt) {
-      alert('No messsage, dude');
+      App.pubsub.emit('error','You need a message, dude!');
     } else {
       ChatModel.sendMessage(msgTxt);
     }
