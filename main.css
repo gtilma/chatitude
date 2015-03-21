@@ -27,3 +27,8 @@ label{
   display:block;
   margin:1em 0em 1em 0em;
 }
+
+.signedInAs {
+  font-weight: bold;
+  color: blue;
+}

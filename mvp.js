@@ -73,7 +73,7 @@ Messages.Presenter = function(){
 
   this.render = function(){
     $("#parent").append(Messages.view());
-    $('#parent').prepend($('<button class="button" id="signOut">').text('Sign Out'), $('<h3 id="signedInAs">').text('You are signed in as ' + localStorage.getItem('userName')));
+    $('#parent').prepend($('<button class="button" id="signOut">').text('Sign Out'), $('<h3 id="signedInAs">').html('You are signed in as <span class="signedInAs">' + localStorage.getItem('userName') + '</span>'));
     if (ChatModel.isSignedin()) {
       $('#signedInAs').show();
       $('#signin, #signup').hide();
