@@ -1,0 +1,29 @@
+body {
+  font-family: courier;
+}
+
+.button {
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 13px;
+  padding: 1em;
+  cursor:pointer;
+  transition:all 0.2s ease-in-out;
+}
+.button:hover{
+  opacity:0.8;
+}
+input[type=text], input[type=password] {
+  font-family:inherit;
+  padding:1em;
+  font-size:13px;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+
+label{
+  display:block;
+  margin:1em 0em 1em 0em;
+}
