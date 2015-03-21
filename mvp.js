@@ -20,7 +20,7 @@ Messages.Presenter = function(){
   });
 
   App.pubsub.on('signedin', function(username) {
-    $('#signedInAs').text('You are signed in as ' + localStorage.getItem('userName')).show();
+    $('#signedInAs').html('You are signed in as <span class="signedInAs">' + localStorage.getItem('userName') + '</span>').show();
     $('#si_username').val('');
     $('#si_password').val('');
     $('#signin, #signup').hide();
@@ -77,7 +77,7 @@ Messages.Presenter = function(){
 
   this.render = function(){
     $("#parent").append(Messages.view());
-    $('#parent').prepend($('<button class="button" id="signOut">').text('Sign Out'), $('<h3 id="signedInAs">').html('You are signed in as <span class="signedInAs">' + localStorage.getItem('userName') + '</span>'));
+    $('#parent').prepend($('<button class="button" id="signOut">').html('Sign Out'), $('<h3 id="signedInAs">').html('You are signed in as <span class="signedInAs">' + localStorage.getItem('userName') + '</span>'));
     if (ChatModel.isSignedin()) {
       $('#signedInAs').show();
       $('#signin, #signup').hide();
